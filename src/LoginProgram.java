@@ -36,7 +36,7 @@ public class LoginProgram {
             //escape loop if correct values entered
             if (inputUserName.equals(userName) && inputPassword.equals(password)) {
                 validCredentials = true;
-                attemptCounter = 0;
+                attemptCounter = 0; //reset to 0 in case correct credentials entered on last attempt.
             }
             else {
                 System.out.println("Incorrect User Name or Password! " + (maxNumOfAttempts - attemptCounter) + " attempt(s) remaining");
