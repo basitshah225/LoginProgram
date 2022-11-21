@@ -4,9 +4,9 @@ public class LoginProgram {
 
     public static void main(String[] args) {
         //initialise variables
-        String userName = "basitshah225";
-        String password = "123";
-        int maxNumOfAttempts = 5;
+        String userName = "Admin";
+        String password = "PaSSword!!!";
+        int maxNumOfAttempts = 3;
         int attemptCounter = 0;
         boolean validCredentials = false;
 
@@ -21,7 +21,7 @@ public class LoginProgram {
             //loop until user enters input for both fields per attempt
             while (inputUserName.isEmpty()) {
                 System.out.print("Please enter your username: ");
-                inputUserName = input.nextLine();
+                inputUserName = input.nextLine().toLowerCase();
                 if (inputUserName.isEmpty()) {
                     System.out.println("Field can not be blank");
                 }
@@ -34,7 +34,7 @@ public class LoginProgram {
                 }
             }
             //escape loop if correct values entered
-            if (inputUserName.equals(userName) && inputPassword.equals(password)) {
+            if (inputUserName.equals(userName.toLowerCase()) && inputPassword.equals(password)) {
                 validCredentials = true;
                 attemptCounter = 0; //reset to 0 in case correct credentials entered on last attempt.
             }
@@ -46,7 +46,7 @@ public class LoginProgram {
             System.out.println("Sorry maximum number of login attempts reached!");
         }
         else {
-            System.out.println("Congratulations, you have logged in!");
+            System.out.println("Access granted");
         }
     }
 }
